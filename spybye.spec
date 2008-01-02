@@ -17,6 +17,7 @@ BuildRequires:	libclamav-devel
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 Requires:	clamav
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 The crawl tool provide a proxy server through which web pages can be fetched
