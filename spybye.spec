@@ -11,13 +11,14 @@ Source2:	spybye.init
 Source3:	spybye.sysconfig
 Source4:	spybye.logrotate
 Source5:	README.Mandriva
+Patch0:		spybye-memleak.diff
 BuildRequires:	autoconf2.5
 BuildRequires:	libevent-devel
-BuildRequires:	libclamav-devel
+#BuildRequires:	clamav-devel
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 Requires:	clamav
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The crawl tool provide a proxy server through which web pages can be fetched
@@ -28,6 +29,7 @@ your web browser to use the port configured by -p as proxy port.
 %prep
 
 %setup -q -n %{name}-%{version}
+%patch0 -p0
 
 cp %{SOURCE2} %{name}.init
 cp %{SOURCE3} %{name}.sysconfig
