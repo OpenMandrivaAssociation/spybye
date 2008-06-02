@@ -40,7 +40,7 @@ cp %{SOURCE5} README.Mandriva
 
 %configure2_5x \
     --bindir=%{_sbindir} \
-    --datadir=%{_localstatedir}
+    --datadir=%{_localstatedir}/lib
 
 %make
 
@@ -81,8 +81,8 @@ rm -rf %{buildroot}
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/sysconfig/%{name}
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/logrotate.d/%{name}
 %attr(0755,root,root) %{_sbindir}/*
-%dir %{_localstatedir}/%{name}
-%{_localstatedir}/%{name}/*
+%dir %{_localstatedir}/lib/%{name}
+%{_localstatedir}/lib/%{name}/*
 %dir %attr(0755,root,root) /var/log/%{name}
 %attr(0644,root,root) %ghost %config(noreplace) /var/log/%{name}/%{name}.log
 %attr(0644,root,root) %{_mandir}/man?/*
