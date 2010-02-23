@@ -3,7 +3,7 @@ Name:		spybye
 Version:	0.3
 Release:	%mkrel 5
 Group:		System/Servers
-License:	GPL
+License:	GPLv2
 URL:		http://www.monkey.org/~provos/spybye/
 Source0:	http://www.monkey.org/~provos/%{name}-%{version}.tar.gz
 Source1:	http://www.monkey.org/~provos/%{name}-%{version}.tar.gz.sig
