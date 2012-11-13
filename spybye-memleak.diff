@@ -1,0 +1,13 @@
+ 
+ http://code.google.com/p/spybye/issues/detail?id=1
+
+--- spybye.c	2007-06-10 00:48:32.000000000 +0200
++++ spybye.c.oden	2008-05-14 10:46:57.000000000 +0200
+@@ -576,6 +576,7 @@ void
+ dns_free(struct dns_cache *entry)
+ {
+ 	SPLAY_REMOVE(dns_tree, &root, entry);
++	free(entry->addresses);
+ 	free(entry->name);
+ 	free(entry);
+ }

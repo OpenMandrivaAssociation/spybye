@@ -1,0 +1,7 @@
+sources:
+  "README.Mandriva:"	07e1482ccfb51c52235bd2521d3fd089bfce74b8
+  "spybye-0.3.tar.gz:"	db2cba9e5a415ecd9b09c6439f78427df51ea08e
+  "spybye-0.3.tar.gz.sig:"	c6009b217b54978acd37fe4cd431d1a9a7ab5541
+  "spybye.init:"	0cbd1bf0a1ff957f5fa80c523d527143fded5e26
+  "spybye.logrotate:"	c190654aae835ebd6a6bc0f422801fb88fc14a78
+  "spybye.sysconfig:"	9d7ad4c38677baebb5e682ef663fbf48c7a559c7
