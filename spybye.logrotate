@@ -1,0 +1,6 @@
+/var/log/spybye/spybye.log {
+    notifempty
+    missingok
+    monthly
+    compress
+}

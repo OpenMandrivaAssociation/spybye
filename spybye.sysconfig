@@ -1,0 +1,12 @@
+
+SPYBYE_GOOD_PATTERNS="-g /var/lib/spybye/good_patterns"
+
+SPYBYE_BAD_PATTERNS="-b /var/lib/spybye/bad_patterns"
+
+SPYBYE_LOGFILE="-l /var/log/spybye/spybye.log"
+
+#SPYBYE_SHAREURL="-S"
+
+SPYBYE_PORT="-p 8181"
+
+SPYBYE_OPTIONS="-P -x"

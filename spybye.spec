@@ -86,3 +86,52 @@ rm -rf %{buildroot}
 %dir %attr(0755,root,root) /var/log/%{name}
 %attr(0644,root,root) %ghost %config(noreplace) /var/log/%{name}/%{name}.log
 %attr(0644,root,root) %{_mandir}/man?/*
+
+
+%changelog
+* Wed Dec 22 2010 Oden Eriksson <oeriksson@mandriva.com> 0.3-6mdv2011.0
++ Revision: 623879
+- rebuilt against libevent 2.x
+
+  + Sandro Cazzaniga <kharec@mandriva.org>
+    - fix licence
+
+* Tue Sep 08 2009 Thierry Vignaud <tv@mandriva.org> 0.3-5mdv2010.0
++ Revision: 434080
+- rebuild
+
+* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.3-4mdv2009.0
++ Revision: 269346
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Wed May 14 2008 Oden Eriksson <oeriksson@mandriva.com> 0.3-3mdv2009.0
++ Revision: 207100
+- rebuilt against libevent-1.4.4
+- added P0 to fix a memleak
+- disable clamav support for now
+
+  + Michael Scherer <misc@mandriva.org>
+    - rebuild for new clamav
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Jul 31 2007 Oden Eriksson <oeriksson@mandriva.com> 0.3-2mdv2008.0
++ Revision: 57081
+- the license was really GPL
+- fix one config bug
+
+* Tue Jul 31 2007 Oden Eriksson <oeriksson@mandriva.com> 0.3-1mdv2008.0
++ Revision: 57073
+- Import spybye
+
+
+
+* Tue Jul 31 2007 Oden Eriksson <oeriksson@mandriva.com> 0.3-1mdv2008.0
+- initial Mandriva package

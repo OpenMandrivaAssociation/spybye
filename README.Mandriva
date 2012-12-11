@@ -1,0 +1,16 @@
+S p y B y e   i n   M a n d r i v a   L i n u x
+-----------------------------------------------
+
+There's not many steps you need to do. The setup is done in the
+/etc/sysconfig/spybye file, for example if you want the proxy running on a
+different port, then just change the 8181 value to something else as in:
+
+SPYBYE_PORT="-p 8181"
+
+Then just restart the service:
+
+/etc/rc.d/init.d/spybye restart
+
+Don't forget to change the proxy settings in your preffered web browser.
+
+That's it.

@@ -1,0 +1,71 @@
+#!/bin/bash
+#
+# spybye	This shell script takes care of starting and stopping spybye.
+#
+# chkconfig: 345 55 45
+# description: spybye is a proxy to help finding malware.
+# probe: false
+# processname: spybye
+# pidfile: /var/run/spybye/spybye.pid
+# config: /etc/sysconfig/spybye
+
+### BEGIN INIT INFO
+# Provides: spybye
+# Required-Start: $network
+# Required-Stop: $network
+# Default-Start: 3 4 5
+# Short-Description: spybye is a proxy to help finding malware.
+# Description: spybye is a proxy to help finding malware.
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "${NETWORKING}" = "no" ] && exit 0
+
+[ -f /etc/sysconfig/spybye ] && . /etc/sysconfig/spybye
+
+# See how we were called.
+case "$1" in
+start)
+	echo -n "Starting spybye: "
+	/usr/sbin/spybye \
+	${SPYBYE_GOOD_PATTERNS:-"-g /var/lib/spybye/good_patterns"} \
+	${SPYBYE_BAD_PATTERNS:-"-b /var/lib/spybye/bad_patterns"} \
+	${SPYBYE_LOGFILE:-"-l /var/log/spybye/spybye.log"} \
+	${SPYBYE_SHAREURL:-""} \
+	${SPYBYE_PORT:-"-p 8181"} \
+	${SPYBYE_OPTIONS:-"-P -x"} 2>/dev/null &
+	if ! [ -z "`/sbin/pidof spybye`" ]; then
+	    touch /var/lock/subsys/spybye; success
+	else
+	    failure
+	fi
+	echo
+	;;
+stop)
+	echo -n "Stopping spybye: "
+	killproc spybye
+	echo
+	rm -f /var/lock/subsys/spybye
+	;;
+status)
+	status spybye
+	;;
+restart|reload)
+	$0 stop
+	$0 start
+	;;
+condrestart)
+	[ -f /var/lock/subsys/spybye ] && $0 restart
+	;;
+  *)
+	echo "Usage: spybye {start|stop|status|restart|condrestart|reload}"
+	exit 1
+esac
+
+exit 0
