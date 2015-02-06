@@ -1,7 +1,7 @@
 Summary:	A proxy to help finding malware
 Name:		spybye
 Version:	0.3
-Release:	7
+Release:	8
 Group:		System/Servers
 License:	GPLv2
 Url:		http://www.monkey.org/~provos/spybye/
