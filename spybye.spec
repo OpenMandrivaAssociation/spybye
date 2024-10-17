@@ -4,7 +4,7 @@ Version:	0.3
 Release:	8
 Group:		System/Servers
 License:	GPLv2
-Url:		http://www.monkey.org/~provos/spybye/
+Url:		https://www.monkey.org/~provos/spybye/
 Source0:	http://www.monkey.org/~provos/%{name}-%{version}.tar.gz
 Source1:	http://www.monkey.org/~provos/%{name}-%{version}.tar.gz.sig
 Source2:	spybye.init
