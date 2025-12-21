@@ -12,6 +12,11 @@ Source3:	spybye.sysconfig
 Source4:	spybye.logrotate
 Source5:	README.Mandriva
 Patch0:		spybye-memleak.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(libevent)
 Requires(post,preun):	rpm-helper
 Requires:	clamav
